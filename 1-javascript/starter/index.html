@@ -16,18 +16,30 @@
     // Create a post object with an id and title that is frozen
     // Test whether you can reassign each of the variables
     // Log out each of the variables to the page
+    const username="abdallah"
+    let loggedIn="ahmed"
+    let a={id:1,name:"ahamed"}
+    Object.freeze(a)
 
-
+//     let person = {
+//    name: "Leonardo"
+// };
+// let animal = {
+//    species: "snake"
+// };
+// Object.freeze(person);
+// person = animal;
+// console.log(person);
 
     // Practice 2 - Template Literals
     // Create a variable for firstName and lastName
     // Create a variable called message that can be reassigned
     // Use a template literal to create message like "Hi firstName lastName!"
     // Log out the message to the console
-    const firstName = "";
-    const lastName = ""
+    const firstName = "mohammad";
+    const lastName = "taha"
 
-    let message = ``;
+    let message = `HI ${ firstName} ${lastName }${"!"}`;
 
     console.log(message);
 
@@ -36,13 +48,15 @@
     // Rewrite the function MyName using arrow function syntax
     // Name the arrow function ArrowName
     // Log the value of ArrowName passing in your name as a parameter
-
-    function MyName(name) {
+          
+     MyName=(ArrowName)=> {
+       
       return (
-        `<p>${name}<p>`
+        
+        `<p>${ArrowName}<p>`
       )
     }
-
+      console.log(MyName("mohammad"))
 
 
     // Practice 4 - .filter() and .map()
@@ -64,8 +78,24 @@
         title: "Last one"
       }
     ];
+    a=posts.filter((item,index)=>{
+      console.log(item)
+      console.log(index)
+      console.log(item.title.split(" "))
+     return item.title.includes("post");
+     console.log()
+    //  return x[i]==="post"
+    
+     
+    })
+    
+      console.log(a)
 
-
+    // map
+    w=a.map(item=>{
+      return item.title
+    })
+    console.log(w)
 
     // Practice 5 - DOM Creation
     // Map over the postsArray
@@ -91,7 +121,14 @@
       }
     ];
 
-
+post1=postsArray.map(item=>{
+  let para = document.createElement("h2");
+  let node = document.createTextNode(item.title);
+para.appendChild(node);
+let element = document.getElementById("root");
+element.appendChild(para);
+console.log(node)
+})
   </script>
 </body>
 
